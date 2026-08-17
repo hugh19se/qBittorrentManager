@@ -1,7 +1,16 @@
 
 # qBittorrentManager
 
-A series of shell scripts to start/stop a wireguard connection, port forwarding and a qBittorrent-nox instance
+A series of shell scripts that achieves the following:
+* on running `startqBittorrent.sh`
+    - Starts a WireGuard VPN connection
+    - Uses natpmpc to open a port on the VPN's network interface
+    - Modifies the qBittorrent-nox configuration to use the listening port opened by natpmpc
+    - Starts qBittorrent-nox
+* on running `stopqBittorrent.sh`
+    - Kills the running qBittorrent-nox process
+    - Kills the running natpmpc script
+    - Disconnects from the WireGuard VPN connection
 
 ## Prerequisites
 - Wireguard
